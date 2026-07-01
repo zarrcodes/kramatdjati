@@ -6,10 +6,12 @@
     <title>The Republic of Kramat Jati</title>
     <meta name="description" content="Official website of the Republic of Kramat Jati - A nation devoted to knowledge, civilization, and Islamic heritage.">
     
+    <!-- Fonts: Playfair Display (Serif), Inter (Sans-Serif), Amiri (Arabic/Classical feel) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -471,24 +473,31 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
+        /* Updated Cover Styles to ensure images are clearly visible */
         .book-cover {
-            height: 200px;
+            height: 350px; /* Increased height so portrait cover fits nicely */
             background: var(--primary-green);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary-gold);
-            font-size: 3rem;
             position: relative;
         }
 
-        /* Subtle pattern for book cover */
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Subtle pattern for book cover border */
         .book-cover::after {
             content: '';
             position: absolute;
             top: 5px; left: 5px; right: 5px; bottom: 5px;
             border: 1px solid var(--primary-gold);
             opacity: 0.5;
+            pointer-events: none;
         }
 
         .book-info {
@@ -538,6 +547,7 @@
             justify-content: center;
             gap: 10px;
             transition: var(--transition);
+            text-decoration: none;
         }
 
         .btn-download:hover {
@@ -800,8 +810,10 @@
 </head>
 <body>
 
+    <!-- Reading Progress Bar -->
     <div id="progress-bar"></div>
 
+    <!-- Navigation -->
     <header>
         <nav>
             <div class="logo">
@@ -831,6 +843,7 @@
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content fade-in">
             <h1>The Republic of Kramat Jati</h1>
@@ -842,6 +855,7 @@
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about">
         <div class="fade-in">
             <h2 class="section-title">About Our Nation</h2>
@@ -860,6 +874,7 @@
         </div>
     </section>
 
+    <!-- Featured Books / Library Integration -->
     <section id="library" class="bg-alt">
         <div class="fade-in">
             <h2 class="section-title">Digital Library</h2>
@@ -879,58 +894,71 @@
             </div>
 
             <div class="books-grid" id="books-container">
+                <!-- Book 1 -->
                 <div class="book-card" data-category="philosophy">
-                    <div class="book-cover"><i class="fa-solid fa-book-journal-whills"></i></div>
+                    <div class="book-cover">
+                        <img src="https://i.postimg.cc/VL86BCPW/IMG-20260701-WA0064.jpg" alt="Petir jang Membelah">
+                    </div>
                     <div class="book-info">
                         <span class="book-category">Philosophy</span>
-                        <h3 class="book-title">The Foundations of Justice</h3>
-                        <div class="book-author">By Dr. Al-Farabi • 2024</div>
-                        <p class="book-desc">An exploration of ethical governance and the moral obligations of leadership in a modern Islamic republic.</p>
-                        <button class="btn-download" onclick="downloadSimulation(this)">
-                            <i class="fa-solid fa-file-pdf"></i> Download PDF
-                        </button>
+                        <h3 class="book-title">Petir jang Membelah</h3>
+                        <div class="book-author">By Revano, Rayyan, Razi • 2026</div>
+                        <p class="book-desc">Petir jang Membelah of Sultan Revano, Vizier Rayyan and Secretary Razi, is the first main philosophy book to read after the introduction.</p>
+                        <a href="https://drive.google.com/drive/folders/1Qm7TShcGMJppUUxse5Z8WvkHy66-9H92" target="_blank" class="btn-download">
+                            <i class="fa-solid fa-folder-open"></i> Access Folder
+                        </a>
                     </div>
                 </div>
-                <div class="book-card" data-category="history">
-                    <div class="book-cover"><i class="fa-solid fa-scroll"></i></div>
+                <!-- Book 2 -->
+                <div class="book-card" data-category="philosophy">
+                    <div class="book-cover">
+                        <img src="https://i.postimg.cc/KvxGghts/IMG-20260701-WA0066.jpg" alt="Pendjelasan Soeltan Revano bin Rahardjo">
+                    </div>
                     <div class="book-info">
-                        <span class="book-category">History</span>
-                        <h3 class="book-title">Chronicles of Kramat Jati</h3>
-                        <div class="book-author">By H. Abdul Rahman • 2022</div>
-                        <p class="book-desc">A comprehensive history of the founding of the Republic and its rise as a center of knowledge.</p>
-                        <button class="btn-download" onclick="downloadSimulation(this)">
-                            <i class="fa-solid fa-file-pdf"></i> Download PDF
-                        </button>
+                        <span class="book-category">Philosophy</span>
+                        <h3 class="book-title">Pendjelasan Soeltan Revano bin Rahardjo</h3>
+                        <div class="book-author">By Revano • 2026</div>
+                        <p class="book-desc">Pendjelasan Soeltan Revano bin Rahardjo of Sultan Revano, is the second main philosophy book to read.</p>
+                        <a href="https://drive.google.com/drive/folders/1Qm7TShcGMJppUUxse5Z8WvkHy66-9H92" target="_blank" class="btn-download">
+                            <i class="fa-solid fa-folder-open"></i> Access Folder
+                        </a>
                     </div>
                 </div>
-                <div class="book-card" data-category="theology">
-                    <div class="book-cover"><i class="fa-solid fa-quran"></i></div>
+                <!-- Book 3 -->
+                <div class="book-card" data-category="philosophy">
+                    <div class="book-cover">
+                        <img src="https://i.postimg.cc/W30Vh5zp/IMG-20260701-WA0068.jpg" alt="Toentoenan bagi Djiwa">
+                    </div>
                     <div class="book-info">
-                        <span class="book-category">Theology</span>
-                        <h3 class="book-title">Light of Certainty</h3>
-                        <div class="book-author">By Imam Al-Ghazali (Trans.) • 2025</div>
-                        <p class="book-desc">A new, annotated translation of classical treatises on spiritual purification and belief.</p>
-                        <button class="btn-download" onclick="downloadSimulation(this)">
-                            <i class="fa-solid fa-file-pdf"></i> Download PDF
-                        </button>
+                        <span class="book-category">Philosophy</span>
+                        <h3 class="book-title">Toentoenan bagi Djiwa</h3>
+                        <div class="book-author">By Revano • 2026</div>
+                        <p class="book-desc">Toentoenan bagi Djiwa of Sultan Revano, is the last main philosophy book to read.</p>
+                        <a href="https://drive.google.com/drive/folders/1Qm7TShcGMJppUUxse5Z8WvkHy66-9H92" target="_blank" class="btn-download">
+                            <i class="fa-solid fa-folder-open"></i> Access Folder
+                        </a>
                     </div>
                 </div>
-                <div class="book-card" data-category="civilization">
-                    <div class="book-cover"><i class="fa-solid fa-chess-knight"></i></div>
+                <!-- Book 4 -->
+                <div class="book-card" data-category="philosophy">
+                    <div class="book-cover">
+                        <img src="https://i.postimg.cc/rph6zzSp/IMG-20260701-WA0065.jpg" alt="Sari Pemikiran">
+                    </div>
                     <div class="book-info">
-                        <span class="book-category">Civilization</span>
-                        <h3 class="book-title">Architecture of the Soul</h3>
-                        <div class="book-author">By L. Hassan • 2023</div>
-                        <p class="book-desc">How urban planning in Kramat Jati mirrors Islamic principles of unity, privacy, and community.</p>
-                        <button class="btn-download" onclick="downloadSimulation(this)">
-                            <i class="fa-solid fa-file-pdf"></i> Download PDF
-                        </button>
+                        <span class="book-category">Philosophy</span>
+                        <h3 class="book-title">Sari Pemikiran</h3>
+                        <div class="book-author">By Revano • 2026</div>
+                        <p class="book-desc">Sari Pemikiran of Sultan Revano, is a book of introduction to philosophy.</p>
+                        <a href="https://drive.google.com/drive/folders/1Qm7TShcGMJppUUxse5Z8WvkHy66-9H92" target="_blank" class="btn-download">
+                            <i class="fa-solid fa-folder-open"></i> Access Folder
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- History Section -->
     <section id="history">
         <div class="fade-in">
             <h2 class="section-title">Historical Timeline</h2>
@@ -963,6 +991,7 @@
         </div>
     </section>
 
+    <!-- Philosophy Section -->
     <section id="philosophy" class="bg-alt">
         <div class="fade-in">
             <h2 class="section-title">Our Philosophy</h2>
@@ -979,6 +1008,7 @@
         </div>
     </section>
 
+    <!-- Constitution Section -->
     <section id="constitution">
         <div class="fade-in">
             <h2 class="section-title">The Constitution</h2>
@@ -1002,6 +1032,7 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
     <section id="gallery" class="bg-alt">
         <div class="fade-in">
             <h2 class="section-title">National Gallery</h2>
@@ -1038,6 +1069,7 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
         <div class="fade-in">
             <h2 class="section-title">Contact the Republic</h2>
@@ -1063,6 +1095,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo">Republic of Kramat Jati</div>
@@ -1075,10 +1108,11 @@
             </ul>
         </div>
         <div class="copyright">
-            &copy; <span id="year"></span> Republic of Kramat Jati. All Rights Reserved.
+            &copy; <span id="year"></span> This website was made by Abdurazzaq M. Ibrahim
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
     <button id="back-to-top" aria-label="Back to top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
@@ -1198,27 +1232,6 @@
                 }
             });
         });
-
-        // PDF Download Simulation
-        function downloadSimulation(btn) {
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Preparing PDF...';
-            btn.style.pointerEvents = 'none';
-            
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fa-solid fa-check"></i> Download Started';
-                btn.style.background = 'var(--primary-green)';
-                btn.style.color = 'var(--primary-gold)';
-                
-                // Reset after 3 seconds
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.style.pointerEvents = 'auto';
-                    btn.style.background = '';
-                    btn.style.color = '';
-                }, 3000);
-            }, 1500);
-        }
     </script>
 </body>
 </html>
